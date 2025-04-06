@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - OptimizeYourShopify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        .thank-you {
+            text-align: center;
+            padding: 100px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .thank-you-icon {
+            font-size: 5rem;
+            color: var(--success-color);
+            margin-bottom: 2rem;
+        }
+        
+        .thank-you h1 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .thank-you p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .next-steps {
+            background-color: var(--background-light);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 3rem;
+            text-align: left;
+        }
+        
+        .next-steps h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .next-steps ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        
+        .next-steps ol li {
+            margin-bottom: 1rem;
+        }
+        
+        .back-home {
+            margin-top: 3rem;
+        }
+        
+        .shop-url-display {
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 2rem 0;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>OptimizeYourShopify</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#problem">Problem</a></li>
+                    <li><a href="index.html#solution">Solution</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#guarantee">Guarantee</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Thank You Section -->
+    <section class="thank-you">
+        <div class="container">
+            <div class="thank-you-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1>Thank You for Your Purchase!</h1>
+            <p>We've received your order and will begin working on your store optimization right away.</p>
+            <p>You'll receive your report within 24 hours.</p>
+            
+            <div class="shop-url-display">
+                <p>We'll be analyzing your store: <span id="shop-url"></span></p>
+            </div>
+            
+            <div class="next-steps">
+                <h2>Next Steps</h2>
+                <ol>
+                    <li>Check your email for a confirmation of your purchase.</li>
+                    <li>We'll analyze your store and send you a detailed report within 24 hours.</li>
+                    <li>If you purchased the Implementation option, we'll also make the necessary changes to your store.</li>
+                </ol>
+            </div>
+            
+            <div class="back-home">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>OptimizeYourShopify</h2>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">GDPR Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 OptimizeYourShopify. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Track page view in Google Analytics
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'page_view', {
+                    page_title: document.title,
+                    page_location: window.location.href,
+                    page_path: window.location.pathname
+                });
+            }
+            
+            // Display the shop URL from localStorage
+            const shopUrl = localStorage.getItem('shopUrl');
+            if (shopUrl) {
+                document.getElementById('shop-url').textContent = shopUrl;
+            } else {
+                // If no shop URL is found, hide the shop URL display
+                document.querySelector('.shop-url-display').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html> 
