@@ -32,6 +32,59 @@ A clean, conversion-focused landing page for the OptimizeYourShopify service, in
    ```
 4. Deploy to your web server
 
+## Deployment Options
+
+### Option 1: Using the Deployment Script
+
+We've included a deployment script that makes it easy to deploy to various platforms:
+
+1. Make the script executable:
+   ```bash
+   chmod +x deploy.sh
+   ```
+
+2. Run the script:
+   ```bash
+   ./deploy.sh
+   ```
+
+3. Follow the prompts to deploy to your preferred platform.
+
+### Option 2: Deploy to GitHub Pages
+
+1. Create a new repository on GitHub
+2. Add the remote repository:
+   ```bash
+   git remote add origin https://github.com/yourusername/optimizeshopy.git
+   ```
+3. Push your code to GitHub:
+   ```bash
+   git push -u origin main
+   ```
+4. Go to your repository settings on GitHub
+5. Scroll down to the "GitHub Pages" section
+6. Select the "main" branch as the source
+7. Your site will be published at `https://yourusername.github.io/optimizeshopy/`
+
+### Option 3: Deploy to Netlify
+
+1. Create an account on [Netlify](https://www.netlify.com/)
+2. Connect your GitHub repository
+3. Configure the build settings:
+   - Build command: (leave empty)
+   - Publish directory: /
+4. Click "Deploy site"
+
+### Option 4: Deploy to Vercel
+
+1. Create an account on [Vercel](https://vercel.com/)
+2. Connect your GitHub repository
+3. Configure the build settings:
+   - Framework Preset: Other
+   - Build Command: (leave empty)
+   - Output Directory: /
+4. Click "Deploy"
+
 ## Customization
 
 ### Colors
