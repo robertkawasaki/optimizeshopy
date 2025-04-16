@@ -161,7 +161,7 @@ const languages = {
         nav_pricing: "Precios",
         nav_guarantee: "Garantía",
         nav_faq: "Preguntas Frecuentes",
-        nav_cta: "Empezar",
+        nav_cta: "Mejorar ahora",
         
         // Hero Section
         hero_title: "Optimiza tu tienda Shopify en 24 horas.",
