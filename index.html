@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptimizeYourShopify - Boost Your Store's Conversion Rate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title data-i18n="meta_title">OptimizeYourShopify - Boost Your Store's Performance</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -16,25 +20,33 @@
     </script>
     <!-- Stripe.js -->
     <script src="https://js.stripe.com/v3/"></script>
+    <!-- Language files -->
+    <script src="js/languages.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+    <!-- Main script -->
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>OptimizeYourShopify</h1>
+                <h1 data-i18n="nav_logo">OptimizeYourShopify</h1>
             </div>
-            <nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#problem">Problem</a></li>
-                    <li><a href="#solution">Solution</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#guarantee">Guarantee</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#problem" data-i18n="nav_problem">Problem</a></li>
+                    <li><a href="#solution" data-i18n="nav_solution">Solution</a></li>
+                    <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+                    <li><a href="#guarantee" data-i18n="nav_guarantee">Guarantee</a></li>
+                    <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
                 </ul>
             </nav>
             <div class="cta-button">
-                <a href="#pricing" class="btn btn-primary">Get Your Store Optimized</a>
+                <a href="#pricing" class="btn btn-primary" data-i18n="nav_cta">Get Your Store Optimized</a>
             </div>
         </div>
     </header>
@@ -43,12 +55,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Your Shopify Store Isn't Converting—Here's How We'll Fix That in 24 Hours</h1>
-                <p class="subheadline">Get actionable fixes to boost sales, not vague advice. Delivered in 24 hours flat.</p>
-                <p class="explanation">We analyze your store against competitors and deliver specific improvements for usability, security, and sales conversion.</p>
+                <h1 data-i18n="hero_title">Boost Your Shopify Store's Performance</h1>
+                <h2 data-i18n="hero_title_2">Boost Your Shopify Store's Performance</h2>
+                <p class="subheadline" data-i18n="hero_subtitle">Get a personalized optimization report and implementation plan to increase your conversion rate</p>
                 <div class="cta-buttons">
-                    <a href="#pricing" class="btn btn-primary">Get Your Store Optimized</a>
-                    <p class="microcopy">No technical skills required. Risk-free guarantee.</p>
+                    <a href="#pricing" class="btn btn-primary" data-i18n="nav_cta">Get Your Store Optimized</a>
+                    <p class="microcopy" data-i18n="hero_microcopy">No technical skills required. Risk-free guarantee.</p>
                 </div>
             </div>
         </div>
@@ -57,27 +69,28 @@
     <!-- Problem Section -->
     <section id="problem" class="problem">
         <div class="container">
-            <h2>Why Your Shopify Store Isn't Selling</h2>
+            <h2 data-i18n="problem_title">Common Issues Affecting Your Store</h2>
+            <p class="explanation" data-i18n="problem_explanation">Many Shopify stores face these challenges that prevent them from reaching their full potential</p>
             <div class="problem-grid">
                 <div class="problem-card">
                     <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <h3>Slow Load Times</h3>
-                    <p>Frustrating customers and causing them to abandon your store before they even see your products.</p>
+                    <h3 data-i18n="problem_card1_title">Low Conversion Rate</h3>
+                    <p data-i18n="problem_card1_text">Visitors aren't converting into customers</p>
                 </div>
                 <div class="problem-card">
                     <div class="icon"><i class="fas fa-sitemap"></i></div>
-                    <h3>Clunky Navigation</h3>
-                    <p>Making visitors leave because they can't find what they're looking for quickly and easily.</p>
+                    <h3 data-i18n="problem_card2_title">High Cart Abandonment</h3>
+                    <p data-i18n="problem_card2_text">Customers abandon their carts before checkout</p>
                 </div>
                 <div class="problem-card">
                     <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Missing Trust Signals</h3>
-                    <p>Killing sales because customers don't feel confident enough to make a purchase.</p>
+                    <h3 data-i18n="problem_card3_title">Poor User Experience</h3>
+                    <p data-i18n="problem_card3_text">Confusing navigation and slow loading times</p>
                 </div>
                 <div class="problem-card">
                     <div class="icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Competitors Outshining You</h3>
-                    <p>While you're busy running your business, these issues are silently stealing your sales.</p>
+                    <h3 data-i18n="problem_card4_title">Competitors Outshining You</h3>
+                    <p data-i18n="problem_card4_text">While you're busy running your business, these issues are silently stealing your sales.</p>
                 </div>
             </div>
         </div>
@@ -86,38 +99,38 @@
     <!-- Solution Section -->
     <section id="solution" class="solution">
         <div class="container">
-            <h2>How We Fix It</h2>
-            <p class="solution-intro">We don't just tell you what's wrong—we show you how to fix it.</p>
+            <h2 data-i18n="solution_title">How We Help You Succeed</h2>
+            <p class="solution-intro" data-i18n="solution_intro">Our comprehensive optimization process includes</p>
             <div class="solution-content">
                 <div class="solution-text">
-                    <p>In just 24 hours, you'll get:</p>
+                    <p data-i18n="solution_text1">In just 24 hours, you'll get:</p>
                     <ul>
-                        <li><strong>Report Option:</strong> A detailed analysis with actionable steps you can implement yourself.</li>
-                        <li><strong>Implementation Option:</strong> We'll make the critical fixes for you, so you can focus on running your business.</li>
+                        <li><strong data-i18n="solution_text_informe_title">Report Option:</strong> <span data-i18n="solution_text_informe_explanation">A detailed analysis with actionable steps you can implement yourself.</span></li>
+                        <li><strong data-i18n="solution_text_implementation_title">Implementation Option:</strong> <span data-i18n="solution_text_implementation_explanation">We'll make the critical fixes for you, so you can focus on running your business.</span></li>
                     </ul>
-                    <p>Both include competitor benchmarking so you know exactly how to stand out in your market.</p>
+                    <p data-i18n="solution_text4">Both include competitor benchmarking so you know exactly how to stand out in your market.</p>
                 </div>
                 <div class="solution-image">
                     <div class="report-mockup">
                         <div class="report-header">
-                            <h3>Store Optimization Report</h3>
-                            <p>Generated for: Your Store Name</p>
+                            <h3 data-i18n="solution_report_title">Store Optimization Report</h3>
+                            <p data-i18n="solution_report_for">Generated for: Your Store Name</p>
                         </div>
                         <div class="report-content">
                             <div class="report-section">
-                                <h4>Performance Analysis</h4>
+                                <h4 data-i18n="solution_report_section1">Performance Analysis</h4>
                                 <div class="chart-placeholder"></div>
                             </div>
                             <div class="report-section">
-                                <h4>Competitor Benchmarking</h4>
+                                <h4 data-i18n="solution_report_section2">Competitor Benchmarking</h4>
                                 <div class="chart-placeholder"></div>
                             </div>
                             <div class="report-section">
-                                <h4>Actionable Recommendations</h4>
+                                <h4 data-i18n="solution_report_section3">Actionable Recommendations</h4>
                                 <ul>
-                                    <li>Optimize product images</li>
-                                    <li>Improve checkout flow</li>
-                                    <li>Add trust badges</li>
+                                    <li data-i18n="solution_report_item1">Optimize product images</li>
+                                    <li data-i18n="solution_report_item2">Improve checkout flow</li>
+                                    <li data-i18n="solution_report_item3">Add trust badges</li>
                                 </ul>
                             </div>
                         </div>
@@ -130,52 +143,53 @@
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2>Choose Your Optimization Plan</h2>
+            <h2 data-i18n="pricing_title">Choose Your Package</h2>
+            <p class="explanation" data-i18n="pricing_subtitle">Select the option that best fits your needs</p>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Store Report</h3>
+                        <h3 data-i18n="pricing_card1_title">Basic Report</h3>
                         <div class="price">
                             <span class="currency">$</span>
-                            <span class="amount">149</span>
+                            <span class="amount" data-i18n="pricing_card1_price">99</span>
                         </div>
-                        <p class="delivery">Delivered in 24 hours</p>
+                        <p class="delivery" data-i18n="pricing_card1_delivery">Delivered in 24 hours</p>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li><i class="fas fa-check"></i> Detailed store analysis</li>
-                            <li><i class="fas fa-check"></i> Competitor benchmarking</li>
-                            <li><i class="fas fa-check"></i> Security assessment</li>
-                            <li><i class="fas fa-check"></i> Usability recommendations</li>
-                            <li><i class="fas fa-check"></i> Conversion optimization tips</li>
-                            <li><i class="fas fa-check"></i> Actionable steps to implement yourself</li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card1_feature1">Detailed store analysis</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card1_feature2">Competitor benchmarking</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card1_feature3">Security assessment</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card1_feature4">Usability recommendations</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card1_feature5">Conversion optimization tips</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card1_feature6">Actionable steps to implement yourself</span></li>
                         </ul>
                     </div>
                     <div class="pricing-cta">
-                        <button id="report-btn" class="btn btn-primary">Get Your Report</button>
+                        <button id="report-btn" class="btn btn-primary" data-i18n="pricing_card1_cta">Get Started</button>
                     </div>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-header">
-                        <h3>Report + Implementation</h3>
+                        <h3 data-i18n="pricing_card2_title">Pro Implementation</h3>
                         <div class="price">
                             <span class="currency">$</span>
-                            <span class="amount">399</span>
+                            <span class="amount" data-i18n="pricing_card2_price">299</span>
                         </div>
-                        <p class="delivery">Completed in 24 hours</p>
+                        <p class="delivery" data-i18n="pricing_card2_delivery">Completed in 24 hours</p>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li><i class="fas fa-check"></i> Everything in the Report</li>
-                            <li><i class="fas fa-check"></i> We implement all critical fixes</li>
-                            <li><i class="fas fa-check"></i> Google Merchant Center setup</li>
-                            <li><i class="fas fa-check"></i> Google Ads optimization</li>
-                            <li><i class="fas fa-check"></i> Post-implementation walkthrough</li>
-                            <li><i class="fas fa-check"></i> 7-day support</li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card2_feature1">Everything in the Report</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card2_feature2">We implement all critical fixes</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card2_feature3">Google Merchant Center setup</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card2_feature4">Google Ads optimization</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card2_feature5">Post-implementation walkthrough</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="pricing_card2_feature6">7-day support</span></li>
                         </ul>
                     </div>
                     <div class="pricing-cta">
-                        <button id="implementation-btn" class="btn btn-primary">Get Report + Implementation</button>
+                        <button id="implementation-btn" class="btn btn-primary" data-i18n="pricing_card2_cta">Get Started</button>
                     </div>
                 </div>
             </div>
@@ -185,14 +199,14 @@
     <!-- Guarantee Section -->
     <section id="guarantee" class="guarantee">
         <div class="container">
-            <h2>100% Money-Back Guarantee</h2>
+            <h2 data-i18n="guarantee_title">100% Money-Back Guarantee</h2>
             <div class="guarantee-content">
                 <div class="guarantee-icon">
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 <div class="guarantee-text">
-                    <p>If you're not completely satisfied with our recommendations, we'll refund your money—no questions asked.</p>
-                    <p>We're so confident in our service because we've seen the results it delivers.</p>
+                    <p data-i18n="guarantee_text1">If you're not completely satisfied with our recommendations, we'll refund your money—no questions asked.</p>
+                    <p data-i18n="guarantee_text2">We're so confident in our service because we've seen the results it delivers.</p>
                 </div>
             </div>
         </div>
@@ -201,33 +215,33 @@
     <!-- Social Proof Section -->
     <section id="social-proof" class="social-proof">
         <div class="container">
-            <h2>What Our Clients Say</h2>
+            <h2 data-i18n="social_proof_title">What Our Clients Say</h2>
             <div class="testimonials">
                 <div class="testimonial">
-                    <div class="quote">"I implemented their suggestions and saw a 25% increase in sales within a month!"</div>
-                    <div class="author">– Sarah, Boutique Owner</div>
+                    <div class="quote" data-i18n="testimonial1_quote">"I implemented their suggestions and saw a 25% increase in sales within a month!"</div>
+                    <div class="author" data-i18n="testimonial1_author">– Sarah, Boutique Owner</div>
                 </div>
                 <div class="testimonial">
-                    <div class="quote">"Their report highlighted issues I never would have noticed. Fixed them in an afternoon and my conversion rate jumped immediately."</div>
-                    <div class="author">– Mike, Dropshipper</div>
+                    <div class="quote" data-i18n="testimonial2_quote">"Their report highlighted issues I never would have noticed. Fixed them in an afternoon and my conversion rate jumped immediately."</div>
+                    <div class="author" data-i18n="testimonial2_author">– Mike, Dropshipper</div>
                 </div>
                 <div class="testimonial">
-                    <div class="quote">"The implementation service was worth every penny. They fixed issues I didn't even know existed."</div>
-                    <div class="author">– Jessica, Fashion Retailer</div>
+                    <div class="quote" data-i18n="testimonial3_quote">"The implementation service was worth every penny. They fixed issues I didn't even know existed."</div>
+                    <div class="author" data-i18n="testimonial3_author">– Jessica, Fashion Retailer</div>
                 </div>
             </div>
             <div class="metrics">
                 <div class="metric">
-                    <div class="metric-value">25%</div>
-                    <div class="metric-label">Average Sales Increase</div>
+                    <div class="metric-value" data-i18n="metric1_value">25%</div>
+                    <div class="metric-label" data-i18n="metric1_label">Average Sales Increase</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">3x</div>
-                    <div class="metric-label">Conversion Rate Improvement</div>
+                    <div class="metric-value" data-i18n="metric2_value">3x</div>
+                    <div class="metric-label" data-i18n="metric2_label">Conversion Rate Improvement</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">24h</div>
-                    <div class="metric-label">Delivery Time</div>
+                    <div class="metric-value" data-i18n="metric3_value">24h</div>
+                    <div class="metric-label" data-i18n="metric3_label">Delivery Time</div>
                 </div>
             </div>
         </div>
@@ -236,27 +250,27 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
+            <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>How does the process work?</h3>
-                    <p>We analyze your store against competitors, identify issues, and provide actionable recommendations. For the implementation option, we'll make the critical fixes for you.</p>
+                    <h3 data-i18n="faq1_question">How long does it take to get my report?</h3>
+                    <p data-i18n="faq1_answer">You'll receive your optimization report within 48 hours after submitting your store URL.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What if I need help implementing the changes?</h3>
-                    <p>That's why we offer the Report + Implementation option. We'll handle all the technical work for you, so you can focus on running your business.</p>
+                    <h3 data-i18n="faq2_question">What information do you need?</h3>
+                    <p data-i18n="faq2_answer">We only need your store's URL to begin the analysis. No sensitive information is required.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you work with new Shopify stores?</h3>
-                    <p>Yes! We work with stores at all stages, from brand new to established. Our recommendations are tailored to your specific situation.</p>
+                    <h3 data-i18n="faq3_question">Do you offer refunds?</h3>
+                    <p data-i18n="faq3_answer">Yes, we offer a 100% money-back guarantee if you're not satisfied with our service.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>How is this different from other optimization services?</h3>
-                    <p>We provide specific, actionable recommendations based on competitor benchmarking, not generic advice. Plus, we deliver results in 24 hours, not weeks.</p>
+                    <h3 data-i18n="faq4_question">How is this different from other optimization services?</h3>
+                    <p data-i18n="faq4_answer">We provide specific, actionable recommendations based on competitor benchmarking, not generic advice. Plus, we deliver results in 24 hours, not weeks.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What if I'm not satisfied with the results?</h3>
-                    <p>We offer a 100% money-back guarantee. If you're not completely satisfied, we'll refund your money—no questions asked.</p>
+                    <h3 data-i18n="faq5_question">What if I'm not satisfied with the results?</h3>
+                    <p data-i18n="faq5_answer">We offer a 100% money-back guarantee. If you're not completely satisfied, we'll refund your money—no questions asked.</p>
                 </div>
             </div>
         </div>
@@ -265,13 +279,13 @@
     <!-- Final CTA Section -->
     <section class="final-cta">
         <div class="container">
-            <h2>Ready to Turn Clicks Into Cash?</h2>
-            <p class="subheadline">Let's make your Shopify store unstoppable.</p>
+            <h2 data-i18n="final_cta_title">Ready to Turn Clicks Into Cash?</h2>
+            <p class="subheadline" data-i18n="final_cta_subheadline">Let's make your Shopify store unstoppable.</p>
             <div class="cta-buttons">
-                <button id="final-report-btn" class="btn btn-primary">Get Your Report</button>
-                <button id="final-implementation-btn" class="btn btn-secondary">Get Report + Implementation</button>
+                <button id="final-report-btn" class="btn btn-primary" data-i18n="pricing_card1_cta">Get Started</button>
+                <button id="final-implementation-btn" class="btn btn-secondary" data-i18n="pricing_card2_cta">Get Started</button>
             </div>
-            <p class="microcopy">Risk-free. Money-back guarantee. No technical skills required.</p>
+            <p class="microcopy" data-i18n="final_cta_microcopy">Risk-free. Money-back guarantee. No technical skills required.</p>
         </div>
     </section>
 
@@ -280,29 +294,28 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h2>OptimizeYourShopify</h2>
+                    <h2 data-i18n="nav_logo">OptimizeYourShopify</h2>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h3>Company</h3>
+                        <h3 data-i18n="footer_company">Company</h3>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="#" data-i18n="footer_about">About Us</a></li>
+                            <li><a href="#" data-i18n="footer_contact">Contact</a></li>
+                            <li><a href="#" data-i18n="footer_blog">Blog</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h3>Legal</h3>
+                        <h3 data-i18n="footer_legal">Legal</h3>
                         <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">GDPR Compliance</a></li>
+                            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+                            <li><a href="#" data-i18n="footer_terms">Terms of Service</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 OptimizeYourShopify. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2024 OptimizeYourShopify. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -318,13 +331,20 @@
     <div id="payment-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Complete Your Purchase</h2>
+            <h2 data-i18n="payment_modal_title">Complete Your Purchase</h2>
             <div id="payment-form">
-                <!-- Stripe Elements will be inserted here -->
+                <div class="form-group">
+                    <label for="shop-url" data-i18n="payment_modal_shop_url">Your Shopify Store URL</label>
+                    <input type="text" id="shop-url" class="form-control" placeholder="your-store.myshopify.com" data-i18n-placeholder="payment_modal_shop_url_placeholder">
+                </div>
+                <div class="form-group">
+                    <label for="card-element" data-i18n="payment_modal_card_details">Card Details</label>
+                    <div id="card-element"></div>
+                </div>
+                <div id="card-errors" class="error-message" role="alert"></div>
+                <button id="submit-button" class="btn btn-primary" data-i18n="payment_modal_submit">Submit</button>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html> 

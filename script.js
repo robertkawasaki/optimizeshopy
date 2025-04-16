@@ -307,4 +307,56 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Run animation on load
     animateOnScroll();
-}); 
+});
+
+// Mobile Menu Toggle
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const mainNav = document.querySelector('.main-nav');
+
+mobileMenuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+    const icon = mobileMenuToggle.querySelector('i');
+    if (mainNav.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!mainNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+        mainNav.classList.remove('active');
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('.main-nav a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
+});
+
+// Function to change language programmatically
+function changeLanguage(lang) {
+    if (lang === 'en' || lang === 'es') {
+        updateLanguage(lang);
+        // Optional: store the preference
+        localStorage.setItem('preferredLanguage', lang);
+    } else {
+        console.error('Unsupported language code. Use "en" or "es".');
+    }
+}
+
+// Example usage:
+// changeLanguage('es'); // Change to Spanish
+// changeLanguage('en'); // Change to English 
