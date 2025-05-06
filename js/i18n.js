@@ -6,9 +6,9 @@ class I18n {
     }
 
     init() {
-        // Force Spanish as default language
-        this.currentLang = 'es';
-        localStorage.setItem('preferred_language', 'es');
+        // Force English as default language
+        this.currentLang = 'en';
+        localStorage.setItem('preferred_language', 'en');
 
         // Apply translations
         this.updateContent();
