@@ -30,6 +30,38 @@ A clean, conversion-focused landing page for the OptimizeYourShopify service, in
    ```html
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
    ```
+
+### Running Locally
+
+You can run the site locally using any of these methods:
+
+1. Using Python (if installed):
+   ```bash
+   # Python 3
+   python -m http.server 8000
+   
+   # Python 2
+   python -m SimpleHTTPServer 8000
+   ```
+
+2. Using Node.js (if installed):
+   ```bash
+   # Install http-server globally
+   npm install -g http-server
+   
+   # Run the server
+   http-server
+   ```
+
+3. Using VS Code:
+   - Install the "Live Server" extension
+   - Right-click on `index.html` and select "Open with Live Server"
+
+After starting the server, open your browser and navigate to:
+- For Python: `http://localhost:8000`
+- For http-server: `http://localhost:8080`
+- For VS Code Live Server: The browser will open automatically
+
 4. Deploy to your web server
 
 ## Deployment Options
