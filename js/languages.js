@@ -88,6 +88,11 @@ const languages = {
         testimonial2_author: "– Mike, Dropshipper",
         testimonial3_quote: "The implementation service was worth every penny. They fixed issues I didn't even know existed.",
         testimonial3_author: "– Jessica, Fashion Retailer",
+        
+        // Google Reviews Section
+        google_reviews_title: "Google Reviews",
+        google_reviews_button: "View All Reviews on Google",
+        
         metric1_value: "25%",
         metric1_label: "Average Sales Increase",
         metric2_value: "3x",
@@ -239,6 +244,11 @@ const languages = {
         testimonial2_author: "– Miguel, Dropshipper",
         testimonial3_quote: "El servicio de implementación valió cada centavo. Arreglaron problemas que ni siquiera sabía que existían.",
         testimonial3_author: "– Jessica, Minorista de Moda",
+        
+        // Google Reviews Section
+        google_reviews_title: "Reseñas de Google",
+        google_reviews_button: "Ver Todas las Reseñas en Google",
+        
         metric1_value: "25%",
         metric1_label: "Aumento Promedio en Ventas",
         metric2_value: "3x",

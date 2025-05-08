@@ -18,13 +18,15 @@
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
     </script>
-    <!-- Stripe.js -->
-    <script src="https://js.stripe.com/v3/"></script>
     <!-- Language files -->
     <script src="js/languages.js" defer></script>
     <script src="js/i18n.js" defer></script>
     <!-- Main script -->
     <script src="script.js" defer></script>
+    <!-- Google Reviews Data -->
+    <script src="js/reviews-data.js" defer></script>
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <!-- Header -->
@@ -60,7 +62,7 @@
                 <p class="subheadline" data-i18n="hero_subtitle">Get a personalized optimization report and implementation plan to increase your conversion rate</p>
                 <div class="cta-buttons">
                     <a href="#pricing" class="btn btn-primary" data-i18n="nav_cta">Get Your Store Optimized</a>
-                    <p class="microcopy" data-i18n="hero_microcopy">No technical skills required. Risk-free guarantee.</p>
+                    <p class="microcopy" data-i18n="hero_microcopy">No technical skills required. Money-back guarantee.</p>
                 </div>
             </div>
         </div>
@@ -212,37 +214,30 @@
         </div>
     </section>
 
-    <!-- Social Proof Section -->
-    <section id="social-proof" class="social-proof">
+    
+
+    <!-- Google Reviews Section -->
+    <section id="google-reviews" class="google-reviews">
         <div class="container">
-            <h2 data-i18n="social_proof_title">What Our Clients Say</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <div class="quote" data-i18n="testimonial1_quote">"I implemented their suggestions and saw a 25% increase in sales within a month!"</div>
-                    <div class="author" data-i18n="testimonial1_author">– Sarah, Boutique Owner</div>
-                </div>
-                <div class="testimonial">
-                    <div class="quote" data-i18n="testimonial2_quote">"Their report highlighted issues I never would have noticed. Fixed them in an afternoon and my conversion rate jumped immediately."</div>
-                    <div class="author" data-i18n="testimonial2_author">– Mike, Dropshipper</div>
-                </div>
-                <div class="testimonial">
-                    <div class="quote" data-i18n="testimonial3_quote">"The implementation service was worth every penny. They fixed issues I didn't even know existed."</div>
-                    <div class="author" data-i18n="testimonial3_author">– Jessica, Fashion Retailer</div>
+            <h2 data-i18n="google_reviews_title">What our clients say</h2>
+            <div class="google-reviews-header">
+                <div class="google-rating">
+                    <div class="rating-value" id="average-rating">4.8</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="rating-count" id="total-reviews">Based on 150+ reviews</div>
                 </div>
             </div>
-            <div class="metrics">
-                <div class="metric">
-                    <div class="metric-value" data-i18n="metric1_value">25%</div>
-                    <div class="metric-label" data-i18n="metric1_label">Average Sales Increase</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-value" data-i18n="metric2_value">3x</div>
-                    <div class="metric-label" data-i18n="metric2_label">Conversion Rate Improvement</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-value" data-i18n="metric3_value">24h</div>
-                    <div class="metric-label" data-i18n="metric3_label">Delivery Time</div>
-                </div>
+            <div class="google-reviews-grid" id="google-reviews-container">
+                <!-- Reviews will be dynamically loaded here -->
+            </div>
+            <div class="google-reviews-footer">
+                <a href="https://g.co/kgs/3e7398u" target="_blank" class="btn btn-secondary" data-i18n="google_reviews_button">View All Reviews</a>
             </div>
         </div>
     </section>
@@ -272,7 +267,86 @@
                     <h3 data-i18n="faq5_question">What if I'm not satisfied with the results?</h3>
                     <p data-i18n="faq5_answer">We offer a 100% money-back guarantee. If you're not completely satisfied, we'll refund your money—no questions asked.</p>
                 </div>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 data-i18n="faq1_question">"How fast will I get my report?"</h3>
+                        <p data-i18n="faq1_answer">24-hour turnaround. We work like your revenue depends on it (because it does).</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 data-i18n="faq2_question">"What's your secret sauce?"</h3>
+                        <p data-i18n="faq2_answer">We hunt four profit killers: abandoned carts, sluggish sites, invisible products, and UX that confuses buyers more than IKEA instructions.</p>
+                    </div>
+                
+                    <div class="faq-item">
+                        <h3 data-i18n="faq3_question">"Can I see a sample report?"</h3>
+                        <p data-i18n="faq3_answer">We protect our methods like Coca-Cola's recipe. Try it risk-free - if we don't expose at least 3 revenue leaks, keep our report and your money.</p>
+                    </div>
+                
+                    <div class="faq-item">
+                        <h3 data-i18n="faq4_question">"Why you over some ChatGPT hack?"</h3>
+                        <p data-i18n="faq4_answer">We benchmark against your actual competitors, not generic advice. Found 63% of stores miss the "mobile speed" trap last month - we'll show if you're one.</p>
+                    </div>
+                
+                    <div class="faq-item">
+                        <h3 data-i18n="faq5_question">"What if I hate it?"</h3>
+                        <p data-i18n="faq5_answer">Email "refund" within 12 hours. We'll vanish like a bad checkout page - no hoops, no drama.</p>
+                    </div>
+                
+                    <div class="faq-item">
+                        <h3 data-i18n="faq6_question">"Will this actually fix my site?"</h3>
+                        <p data-i18n="faq6_answer">We don't do vague. You'll get a battle plan with:<br>
+                        - Cart abandonment fixes that work for stores your size<br>
+                        - Load time hacks (tested on real Shopify stores)<br>
+                        - Product visibility boosts that beat "just add more images"<br>
+                        - UX tweaks that make buyers click "purchase", not "back"</p>
+                    </div>
             </div>
+            <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
+<div class="faq-grid">
+    <div class="faq-item">
+        <h3 data-i18n="faq1_question">How fast do I get my report?</h3>
+        <p data-i18n="faq1_answer">Blink and you'll miss it. Your report lands in your inbox within 48 hours. No "we'll get back to you soon" energy here.</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq2_question">What do you need from me?</h3>
+        <p data-i18n="faq2_answer">Just your store URL. No logins, no NDAs, no secret handshakes. We keep it simple (and safe).</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq3_question">Can I see a sample report?</h3>
+        <p data-i18n="faq3_answer">Nope. We don't hand out our secret sauce. If you're not happy with what you get, just ask for your money back. Zero drama.</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq4_question">What if I'm not thrilled with my report?</h3>
+        <p data-i18n="faq4_answer">Not what you hoped for? Tell us. We'll refund you, no interrogation, no guilt trip. (We're not your phone company.)</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq5_question">What makes this different from every other "optimization" service?</h3>
+        <p data-i18n="faq5_answer">You get specific, actionable fixes-not vague "best practices." We benchmark you against your real competitors. And you get answers in 48 hours, not 3-5 business weeks.</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq6_question">What areas do you actually focus on?</h3>
+        <p data-i18n="faq6_answer">We go straight for the jugular: cart abandonment, website slowness, product invisibility, and UX that makes people rage-quit. If it hurts your sales, it's on our radar.</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq7_question">Will this work for my industry?</h3>
+        <p data-i18n="faq7_answer">If you're on Shopify and want more sales, yes. Fashion, gadgets, pet supplies, weird niche-doesn't matter. We speak Shopify.</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq8_question">Do I need to install anything?</h3>
+        <p data-i18n="faq8_answer">Nope. No apps, no code, no "quick calls." You get a report, you get fixes, you get on with your day.</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq9_question">Will you try to upsell me?</h3>
+        <p data-i18n="faq9_answer">No sales calls. No "just one more thing." Pay once, get your answers, and that's it. (You can exhale now.)</p>
+    </div>
+    <div class="faq-item">
+        <h3 data-i18n="faq10_question">Is my data safe?</h3>
+        <p data-i18n="faq10_answer">We don't touch your customer data. We don't even want it. Your store URL is all we need.</p>
+    </div>
+</div>
+
         </div>
     </section>
 
@@ -289,12 +363,33 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p class="contact-subtitle">Have questions? We're here to help.</p>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/mqaqbwrw" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" class="form-control" placeholder="Your Message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <h2 data-i18n="nav_logo">OptimizeYourShopify</h2>
+                    <p>We're a team of Shopify experts who are passionate about helping you grow your business.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
@@ -315,7 +410,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n="footer_copyright">&copy; 2024 OptimizeYourShopify. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 OptimizeYourShopify. All rights reserved.</p>
             </div>
         </div>
     </footer>

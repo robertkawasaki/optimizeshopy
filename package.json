@@ -1,12 +1,14 @@
 {
   "name": "optimizeshopy",
   "version": "1.0.0",
-  "description": "OptimizeYourShopify Landing Page",
-  "main": "server.js",
+  "description": "Shopify optimization service with Google Reviews integration",
+  "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "update-reviews": "node update-reviews.js"
   },
-  "author": "",
-  "license": "MIT"
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
 } 

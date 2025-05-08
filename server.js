@@ -1,59 +1,40 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+import express from 'express';
+import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const PORT = 3000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const MIME_TYPES = {
-  '.html': 'text/html',
-  '.css': 'text/css',
-  '.js': 'text/javascript',
-  '.json': 'application/json',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.gif': 'image/gif',
-  '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon',
-  '.woff': 'font/woff',
-  '.woff2': 'font/woff2',
-  '.ttf': 'font/ttf',
-  '.eot': 'application/vnd.ms-fontobject',
-  '.otf': 'font/otf',
-};
+const app = express();
 
-const server = http.createServer((req, res) => {
-  console.log(`${req.method} ${req.url}`);
-  
-  // Handle root path
-  let filePath = req.url === '/' ? './index.html' : '.' + req.url;
-  
-  // Get the file extension
-  const extname = path.extname(filePath);
-  let contentType = MIME_TYPES[extname] || 'application/octet-stream';
-  
-  // Read the file
-  fs.readFile(filePath, (err, content) => {
-    if (err) {
-      if (err.code === 'ENOENT') {
-        // Page not found
-        fs.readFile('./404.html', (err, content) => {
-          res.writeHead(404, { 'Content-Type': 'text/html' });
-          res.end(content, 'utf-8');
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// Serve static files
+app.use(express.static('.'));
+
+// Endpoint to update reviews data
+app.post('/api/update-reviews', async (req, res) => {
+    try {
+        const { content } = req.body;
+        const filePath = join(__dirname, 'js', 'reviews-data.js');
+        
+        await fs.writeFile(filePath, content, 'utf8');
+        
+        res.json({ success: true, message: 'Reviews data updated successfully' });
+    } catch (error) {
+        console.error('Error updating reviews:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: 'Failed to update reviews data',
+            error: error.message 
         });
-      } else {
-        // Server error
-        res.writeHead(500);
-        res.end(`Server Error: ${err.code}`);
-      }
-    } else {
-      // Success
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(content, 'utf-8');
     }
-  });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-  console.log('Press Ctrl+C to stop the server');
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 }); 
