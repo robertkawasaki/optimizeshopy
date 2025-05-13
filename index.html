@@ -21,10 +21,11 @@
     <!-- Language files -->
     <script src="js/languages.js" defer></script>
     <script src="js/i18n.js" defer></script>
-    <!-- Main script -->
-    <script src="js/script.js" defer></script>
     <!-- Google Reviews Data -->
-    <script src="js/reviews-data.js" defer></script>
+    <script src="js/reviews-data.js"></script>
+    <!-- Main script -->
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/config.js"></script>
     <!-- Stripe.js -->
     <script src="https://js.stripe.com/v3/"></script>
 </head>
@@ -129,7 +130,7 @@
                 <h2 data-i18n="pricing_title">Choose Your Package</h2>
                 <p class="explanation" data-i18n="pricing_subtitle">Select the option that best fits your needs</p>
                 <div class="pricing-grid">
-                    <div class="pricing-card">
+                    <div class="pricing-card featured">
                         <div class="pricing-header">
                             <h3 data-i18n="pricing_card1_title">Basic Report</h3>
                             <div class="price">
@@ -151,15 +152,25 @@
                         <div class="pricing-cta">
                             <button id="report-btn" class="btn btn-primary" data-i18n="pricing_card1_cta">Get your store optimized</button>
                         </div>
+                        <div class="PaymentMethodFooter-container">
+                            <div class="PaymentMethodFooter-label">
+                                <span class="PaymentMethodFooter-label">Supported payment methods:</span>
+                            </div>
+                            <div class="PaymentMethodFooter-icons">
+                                <img class="PaymentMethodFooter-image" role="presentation" src="https://js.stripe.com/v3/fingerprinted/img/amex-b933c9009eeaf8cfd07e789c549b8c57.svg" alt="amex" id="amex">
+                                <img class="PaymentMethodFooter-image" role="presentation" src="https://js.stripe.com/v3/fingerprinted/img/mastercard-86e9a2b929496a34918767093c470935.svg" alt="mastercard" id="mastercard">
+                                <img class="PaymentMethodFooter-image" role="presentation" src="https://js.stripe.com/v3/fingerprinted/img/visa-fb36094822f73d7bc581f6c0bad1c201.svg" alt="visa" id="visa">
+                            </div>
+                        </div>
                     </div>
-                    <div class="pricing-card featured">
+                    <div class="pricing-card">
                         <div class="pricing-header">
                             <h3 data-i18n="pricing_card2_title">Pro Implementation</h3>
                             <div class="price">
                                 <span class="currency">$</span>
                                 <span class="amount" data-i18n="pricing_card2_price">299</span>
                             </div>
-                            <p class="delivery" data-i18n="pricing_card2_delivery">Completed in 72 hours</p>
+                            <p class="delivery" data-i18n="pricing_card2_delivery">Completed in 7 business days</p>
                         </div>
                         <div class="pricing-features">
                             <ul>
@@ -173,6 +184,16 @@
                         </div>
                         <div class="pricing-cta">
                             <button id="implementation-btn" class="btn btn-primary" data-i18n="pricing_card2_cta">Get your store optimized</button>
+                        </div>
+                        <div class="PaymentMethodFooter-container">
+                            <div class="PaymentMethodFooter-label">
+                                <span class="PaymentMethodFooter-label">Supported payment methods:</span>
+                            </div>
+                            <div class="PaymentMethodFooter-icons">
+                                <img class="PaymentMethodFooter-image" role="presentation" src="https://js.stripe.com/v3/fingerprinted/img/amex-b933c9009eeaf8cfd07e789c549b8c57.svg" alt="amex" id="amex">
+                                <img class="PaymentMethodFooter-image" role="presentation" src="https://js.stripe.com/v3/fingerprinted/img/mastercard-86e9a2b929496a34918767093c470935.svg" alt="mastercard" id="mastercard">
+                                <img class="PaymentMethodFooter-image" role="presentation" src="https://js.stripe.com/v3/fingerprinted/img/visa-fb36094822f73d7bc581f6c0bad1c201.svg" alt="visa" id="visa">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -333,7 +354,7 @@
             <div class="container">
                 <h2 data-i18n="final_cta_title">Ready to Turn Clicks Into Cash?</h2>
                 <p class="subheadline" data-i18n="final_cta_subheadline">Let's make your Shopify store unstoppable.</p>
-                <div class="cta-buttons">
+                <div class="cta-buttons final-cta-buttons">
                     <button id="final-report-btn" class="btn btn-primary" data-i18n="pricing_card1_cta">Get your store optimized</button>
                     <button id="final-implementation-btn" class="btn btn-secondary" data-i18n="pricing_card2_cta">Get your store optimized</button>
                 </div>
