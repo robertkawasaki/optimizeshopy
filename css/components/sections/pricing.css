@@ -1,0 +1,104 @@
+/* Pricing Section Styles */
+.pricing {
+    padding: var(--spacing-3xl) 0;
+}
+
+.pricing h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.pricing-card {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 2px solid var(--primary-color);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.pricing-header {
+    padding: var(--spacing-lg);
+    text-align: center;
+    background: var(--background-light);
+}
+
+.pricing-header h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: var(--spacing-md) 0;
+}
+
+.price .currency {
+    font-size: 1.5rem;
+    vertical-align: super;
+}
+
+.delivery {
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+}
+
+.pricing-features {
+    padding: var(--spacing-lg);
+}
+
+.pricing-features ul li {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+}
+
+.pricing-features ul li i {
+    color: var(--primary-color);
+    margin-right: var(--spacing-sm);
+}
+
+.pricing-cta {
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+/* Responsive Pricing Section */
+@media (max-width: 992px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .pricing-card.featured:hover {
+        transform: translateY(-5px);
+    }
+} 

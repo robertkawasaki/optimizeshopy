@@ -1,0 +1,83 @@
+/* Hero Section Styles */
+.hero {
+    padding: 100px 0;
+    background-image: linear-gradient(205deg,#c6df154d,#15bcdf0d 50%,#30e9be4d);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 4rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.hero .subheadline {
+    font-size: 1.3rem;
+    color: var(--text-light);
+}
+
+.hero .explanation {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .cta-buttons {
+    margin-top: 2rem;
+}
+
+.hero .microcopy {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+/* Responsive Hero */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero .subheadline {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero .subheadline {
+        font-size: 1rem;
+    }
+} 
