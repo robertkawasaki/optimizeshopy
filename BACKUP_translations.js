@@ -5,7 +5,7 @@ const translations = {
             features: "Features",
             pricing: "Pricing",
             faq: "FAQ",
-            cta: "Get Started"
+            cta: "Get your store optimized"
         },
         hero: {
             title: "Boost Your Shopify Store's Performance",

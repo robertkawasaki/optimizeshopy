@@ -13,7 +13,7 @@ const languages = {
         nav_pricing: "Pricing",
         nav_guarantee: "Guarantee",
         nav_faq: "FAQ",
-        nav_cta: "Get Started",
+        nav_cta: "Get your store optimized",
         
         // Hero Section
         hero_title: "Your Shopify Store Isn't Converting—Here's How We'll Fix That in 24 Hours",
