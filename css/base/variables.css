@@ -1,0 +1,54 @@
+/* Design Tokens */
+:root {
+    /* Colors */
+    --primary-color: #01bd8e;
+    --primary-dark: #027e69;
+    --primary-light: #e3f1ee;
+    --secondary-color: #5c6ac4;
+    --text-color: #212b36;
+    --text-light: #637381;
+    --background-color: #ffffff;
+    --background-light: #f9fafb;
+    --border-color: #dfe3e8;
+    --success-color: #50b83c;
+    --warning-color: #ffea8a;
+    --error-color: #de3618;
+
+    /* Typography */
+    --font-family: 'Inter var', 'Inter', Helvetica, Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 0.875rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --line-height-base: 1.6;
+    --line-height-tight: 1.2;
+
+    /* Spacing */
+    --spacing-unit: 1rem;
+    --spacing-xs: calc(var(--spacing-unit) * 0.25);
+    --spacing-sm: calc(var(--spacing-unit) * 0.5);
+    --spacing-md: var(--spacing-unit);
+    --spacing-lg: calc(var(--spacing-unit) * 1.5);
+    --spacing-xl: calc(var(--spacing-unit) * 2);
+    --spacing-2xl: calc(var(--spacing-unit) * 3);
+    --spacing-3xl: calc(var(--spacing-unit) * 4);
+
+    /* Layout */
+    --container-max-width: 1200px;
+    --container-padding: var(--spacing-md);
+    --header-height: 80px;
+    --footer-padding: var(--spacing-xl);
+
+    /* Effects */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 8px;
+
+    /* Z-index layers */
+    --z-header: 100;
+    --z-modal: 1000;
+    --z-tooltip: 2000;
+} 

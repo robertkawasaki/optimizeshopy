@@ -19,7 +19,7 @@ const languages = {
         hero_title: "Your Shopify Store Isn't Converting—Here's How We'll Fix That in 24 Hours",
         hero_subtitle: "Get actionable fixes to boost sales, not vague advice. Delivered in 24 hours flat.",
         hero_explanation: "We analyze your store against competitors and deliver specific improvements for usability, security, and sales conversion.",
-        hero_microcopy: "No technical skills required. Risk-free guarantee.",
+        hero_microcopy: "No technical skills required. Money-back guarantee.",
         hero_cta: "Start Now",
         
         // Problem Section
