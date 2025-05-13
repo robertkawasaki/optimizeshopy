@@ -63,7 +63,7 @@
 }
 
 /* Mobile Navigation */
-@media (max-width: 900px) {
+@media (max-width: 936px) {
     .mobile-menu-toggle {
         display: block;
     }
