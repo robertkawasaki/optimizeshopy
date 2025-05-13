@@ -285,4 +285,16 @@ document.addEventListener('DOMContentLoaded', () => {
     initGoogleReviews();
 });
 
+// Mobile CTA Button
+const mobileCtaBtn = document.getElementById('mobile-cta-btn');
+if (mobileCtaBtn) {
+    mobileCtaBtn.addEventListener('click', () => {
+        // Scroll to pricing section
+        const pricingSection = document.getElementById('pricing');
+        if (pricingSection) {
+            pricingSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+}
+
 // ... rest of your existing script.js code ... 
