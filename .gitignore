@@ -35,9 +35,6 @@ build/
 .env.test.local
 .env.production.local
 
-# Stripe configuration
-js/config.js
-
 # Dependencies
 node_modules/
 

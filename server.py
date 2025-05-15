@@ -1,6 +1,7 @@
 import http.server
 import socketserver
 from urllib.parse import urlparse
+import os
 
 class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
@@ -22,13 +23,16 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
             return
 
-        # Set correct MIME type for JavaScript modules
+        # Set correct MIME type for JavaScript files
         if path.endswith('.js'):
             self.send_response(200)
-            self.send_header('Content-Type', 'application/javascript')
+            self.send_header('Content-Type', 'application/javascript; charset=utf-8')
             self.end_headers()
-            with open(self.translate_path(path), 'rb') as file:
-                self.wfile.write(file.read())
+            try:
+                with open(self.translate_path(path), 'rb') as file:
+                    self.wfile.write(file.read())
+            except FileNotFoundError:
+                self.send_error(404, "File not found")
             return
 
         # Handle all other requests normally
