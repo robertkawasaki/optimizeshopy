@@ -3,15 +3,46 @@ name: Replace Stripe Key
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   replace-key:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug - Print event
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Branch: ${{ github.ref_name }}"
+
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Debug - List files
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -la
+          echo "Checking config.js:"
+          cat js/config.js
 
       - name: Replace Stripe key
         run: |
-          sed -i "s/STRIPE_PUBLISHABLE_KEY_PLACEHOLDER/${{ secrets.STRIPE_PUBLISHABLE_KEY }}/g" js/config.js 
+          if [ -f "js/config.js" ]; then
+            echo "Replacing Stripe key in config.js"
+            sed -i "s/STRIPE_PUBLISHABLE_KEY_PLACEHOLDER/${{ secrets.STRIPE_PUBLISHABLE_KEY }}/g" js/config.js
+            git config --global user.name 'GitHub Actions'
+            git config --global user.email 'github-actions@github.com'
+            git add js/config.js
+            git commit -m "Update Stripe key [skip ci]"
+            git push
+          else
+            echo "Error: config.js not found"
+            exit 1
+          fi 
