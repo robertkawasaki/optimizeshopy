@@ -54,8 +54,26 @@ function initializeMobileMenu() {
 // Use the global config instead of importing
 const stripeConfig = window.appConfig;
 
+// Initialize Stripe
+let stripe = null;
+function initializeStripe() {
+    try {
+        if (typeof Stripe === 'function' && stripeConfig && stripeConfig.publishableKey) {
+            stripe = Stripe(stripeConfig.publishableKey);
+            console.log('Stripe initialized successfully');
+        } else {
+            console.warn('Stripe not available or missing publishable key');
+        }
+    } catch (error) {
+        console.error('Error initializing Stripe:', error);
+    }
+}
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Stripe
+    initializeStripe();
+
     // Get button references
     const reportBtn = document.getElementById('report-btn');
     const implementationBtn = document.getElementById('implementation-btn');
@@ -64,13 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.querySelector('.close-modal');
     const paymentModal = document.querySelector('.payment-modal');
     const chatButton = document.querySelector('.chat-button');
-
-    // Initialize Stripe
-    try {
-        const stripe = Stripe(stripeConfig.publishableKey);
-    } catch (error) {
-        console.error('Error initializing Stripe:', error);
-    }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -88,26 +99,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Payment buttons
     if (reportBtn) {
-        reportBtn.addEventListener('click', () => {
-            window.location.href = stripeConfig.paymentLinks.report;
+        reportBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            try {
+                if (stripeConfig && stripeConfig.paymentLinks && stripeConfig.paymentLinks.report) {
+                    window.location.href = stripeConfig.paymentLinks.report;
+                } else {
+                    console.error('Report payment link not configured');
+                }
+            } catch (error) {
+                console.error('Error handling report button click:', error);
+            }
         });
     }
     
     if (implementationBtn) {
-        implementationBtn.addEventListener('click', () => {
-            window.location.href = stripeConfig.paymentLinks.implementation;
+        implementationBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            try {
+                if (stripeConfig && stripeConfig.paymentLinks && stripeConfig.paymentLinks.implementation) {
+                    window.location.href = stripeConfig.paymentLinks.implementation;
+                } else {
+                    console.error('Implementation payment link not configured');
+                }
+            } catch (error) {
+                console.error('Error handling implementation button click:', error);
+            }
         });
     }
     
     if (finalReportBtn) {
-        finalReportBtn.addEventListener('click', () => {
-            window.location.href = stripeConfig.paymentLinks.report;
+        finalReportBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            try {
+                if (stripeConfig && stripeConfig.paymentLinks && stripeConfig.paymentLinks.report) {
+                    window.location.href = stripeConfig.paymentLinks.report;
+                } else {
+                    console.error('Report payment link not configured');
+                }
+            } catch (error) {
+                console.error('Error handling final report button click:', error);
+            }
         });
     }
     
     if (finalImplementationBtn) {
-        finalImplementationBtn.addEventListener('click', () => {
-            window.location.href = stripeConfig.paymentLinks.implementation;
+        finalImplementationBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            try {
+                if (stripeConfig && stripeConfig.paymentLinks && stripeConfig.paymentLinks.implementation) {
+                    window.location.href = stripeConfig.paymentLinks.implementation;
+                } else {
+                    console.error('Implementation payment link not configured');
+                }
+            } catch (error) {
+                console.error('Error handling final implementation button click:', error);
+            }
         });
     }
     
