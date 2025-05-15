@@ -8,10 +8,17 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         path = parsed_path.path
 
-        # Handle /thank-you redirect
+        # Handle /thank-you by serving /thank-you.html content without redirect
         if path == '/thank-you':
             self.send_response(302)  # 302 Found (temporary redirect)
             self.send_header('Location', '/thank-you.html')
+            self.end_headers()
+            return
+        
+        # Handle /terms-conditions redirect
+        if path == '/terms-conditions':
+            self.send_response(302)  # 302 Found (temporary redirect)
+            self.send_header('Location', '/legal.html')
             self.end_headers()
             return
 
