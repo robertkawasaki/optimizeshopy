@@ -1,5 +1,8 @@
 // Configuration
 const config = {
+    // Stripe Configuration
+    publishableKey: 'STRIPE_PUBLISHABLE_KEY_PLACEHOLDER',
+    
     // Payment Links
     paymentLinks: {
         report: 'https://buy.stripe.com/test_28EeVffinbvU9r31qj5Ne00',
