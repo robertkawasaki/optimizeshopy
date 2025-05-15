@@ -10,12 +10,15 @@ const config = {
     googleAnalyticsId: 'G-PCRCLQXFND'
 };
 
-// Support both module and non-module usage
+// Make config available globally
+window.appConfig = config;
+
+// Support CommonJS
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = config;
-} else if (typeof window !== 'undefined') {
-    window.appConfig = config;
 }
 
-// Export for ES modules
-export default config; 
+// Support ES modules
+if (typeof window !== 'undefined' && window.importScripts) {
+    self.config = config;
+} 

@@ -51,8 +51,8 @@ function initializeMobileMenu() {
     });
 }
 
-// Import Stripe configuration
-import stripeConfig from './config.js';
+// Use the global config instead of importing
+const stripeConfig = window.appConfig;
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
