@@ -45,4 +45,7 @@ node_modules/
 
 # IDE files
 .vscode/
-.idea/ 
+.idea/
+
+# Local configuration
+js/config.local.js 

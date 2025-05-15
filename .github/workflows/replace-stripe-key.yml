@@ -1,0 +1,17 @@
+name: Replace Stripe Key
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  replace-key:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Replace Stripe key
+        run: |
+          sed -i "s/STRIPE_PUBLISHABLE_KEY_PLACEHOLDER/${{ secrets.STRIPE_PUBLISHABLE_KEY }}/g" js/config.js 
