@@ -101,7 +101,7 @@ const languages = {
         metric3_label: "Delivery Time",
         
         // FAQ Section
-        faq_title: "Frequently Asked Questions",
+        /*faq_title: "Frequently Asked Questions",
         faq1_question: "How does the process work?",
         faq1_answer: "We analyze your store against competitors, identify issues, and provide actionable recommendations. For the implementation option, we'll make the critical fixes for you.",
         faq2_question: "What if I need help implementing the changes?",
@@ -111,7 +111,7 @@ const languages = {
         faq4_question: "How is this different from other optimization services?",
         faq4_answer: "We provide specific, actionable recommendations based on competitor benchmarking, not generic advice. Plus, we deliver results in 24 hours, not weeks.",
         faq5_question: "What if I'm not satisfied with the results?",
-        faq5_answer: "We offer a 100% money-back guarantee. If you're not completely satisfied, we'll refund your money—no questions asked.",
+        faq5_answer: "We offer a 100% money-back guarantee. If you're not completely satisfied, we'll refund your money—no questions asked.",*/
         
         // Final CTA Section
         final_cta_title: "Ready to Turn Clicks Into Cash?",
