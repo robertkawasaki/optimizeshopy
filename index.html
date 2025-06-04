@@ -440,5 +440,56 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>
+
+    <!-- Consent Banner -->
+    <div id="consent-banner" style="display:none;">
+      <div class="consent-banner-content">
+        We use cookies for analytics (Google & Hotjar). Your data remains anonymous.
+        <button id="accept-analytics" class="btn btn-secondary">Accept</button>
+        <button id="reject-analytics" class="btn btn-secondary">Reject</button>
+      </div>
+    </div>
+    
+    <script>
+    // Consent logic for analytics
+    function loadAnalyticsScripts() {
+      // Google Analytics
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=GTM-MMWXK656';
+      document.head.appendChild(gaScript);
+      var gaInit = document.createElement('script');
+      gaInit.innerHTML = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'GTM-MMWXK656');`;
+      document.head.appendChild(gaInit);
+      // Hotjar
+      var hjScript = document.createElement('script');
+      hjScript.innerHTML = `(function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:6402419,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`;
+      document.head.appendChild(hjScript);
+    }
+    function showConsentBanner() {
+      document.getElementById('consent-banner').style.display = 'flex';
+    }
+    function hideConsentBanner() {
+      document.getElementById('consent-banner').style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var consent = localStorage.getItem('analytics_consent');
+      if (!consent) {
+        showConsentBanner();
+      } else if (consent === 'accepted') {
+        loadAnalyticsScripts();
+      }
+      document.getElementById('accept-analytics').onclick = function() {
+        localStorage.setItem('analytics_consent', 'accepted');
+        loadAnalyticsScripts();
+        hideConsentBanner();
+      };
+      document.getElementById('reject-analytics').onclick = function() {
+        localStorage.setItem('analytics_consent', 'rejected');
+        hideConsentBanner();
+      };
+    });
+    </script>
+    <!-- End Consent Banner -->
 </body>
 </html> 
