@@ -1,7 +1,7 @@
 // Configuration
 const config = {
     // Stripe Configuration
-    publishableKey: 'STRIPE_PUBLISHABLE_KEY_PLACEHOLDER',
+    publishableKey: 'pk_test_51RONKdPFOqaqG3QzHbWffrOiD2zAuR25nE7OG845axzk69jEdPZ0zRGUpZ6YTGtc6AtzpzOPa98VC9MhFvoU7y2K00eNamxqx8',
     
     // Payment Links
     paymentLinks: {
