@@ -1,11 +1,9 @@
 // Configuration
 const config = {
-    // Stripe Configuration
-    publishableKey: 'pk_test_51RONKdPFOqaqG3QzHbWffrOiD2zAuR25nE7OG845axzk69jEdPZ0zRGUpZ6YTGtc6AtzpzOPa98VC9MhFvoU7y2K00eNamxqx8',
     
     // Payment Links
     paymentLinks: {
-        report: 'https://buy.stripe.com/test_28EeVffinbvU9r31qj5Ne00',
+        report: 'https://buy.stripe.com/9AQ7wl9mtd7Z87eeUU',
         implementation: 'https://buy.stripe.com/your_implementation_link'
     },
     

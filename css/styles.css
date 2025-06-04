@@ -720,7 +720,7 @@ section:nth-child(even) {
 }
 
 .google-review-rating {
-    color: #fbbc04;
+    color: #FFD700;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -1074,10 +1074,12 @@ section:nth-child(even) {
 
 .guarantee{
     text-align: center;
+    background-color: var(--primary-color);
+    color: #fff
 }
 .guarantee-icon{
     font-size: 3rem;
-    color: var(--primary-color);
+    color: #FFD700;
     margin-bottom: var(--spacing-md);
 }
 
@@ -1173,6 +1175,13 @@ section:nth-child(even) {
 
 .next-steps ol li {
     margin-bottom: 1rem;
+}
+
+.next-steps-icon {
+    font-size: 5rem;
+    color: var(--success-color);
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .back-home {
