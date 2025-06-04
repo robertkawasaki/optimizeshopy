@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # OptimizeYourShopify Deployment Script
-# This script helps deploy the website to GitHub Pages or other hosting services
+# This script helps deploy the website to various hosting services
 
 echo "OptimizeYourShopify Deployment Script"
 echo "====================================="
@@ -11,36 +11,6 @@ if ! command -v git &> /dev/null; then
     echo "Error: Git is not installed. Please install Git and try again."
     exit 1
 fi
-
-# Function to deploy to GitHub Pages
-deploy_to_github_pages() {
-    echo "Deploying to GitHub Pages..."
-    
-    # Check if remote repository is set up
-    if ! git remote -v | grep -q "origin"; then
-        echo "No remote repository found. Please set up a GitHub repository first."
-        echo "Then run: git remote add origin https://github.com/yourusername/optimizeshopy.git"
-        exit 1
-    fi
-    
-    # Create a gh-pages branch
-    git checkout -b gh-pages
-    
-    # Add all files
-    git add .
-    
-    # Commit changes
-    git commit -m "Deploy to GitHub Pages"
-    
-    # Push to GitHub
-    git push origin gh-pages --force
-    
-    echo "Deployment to GitHub Pages complete!"
-    echo "Your site should be available at: https://yourusername.github.io/optimizeshopy/"
-    
-    # Switch back to main branch
-    git checkout main
-}
 
 # Function to deploy to Netlify
 deploy_to_netlify() {
@@ -76,23 +46,19 @@ deploy_to_vercel() {
 
 # Main menu
 echo "Select deployment option:"
-echo "1) Deploy to GitHub Pages"
-echo "2) Deploy to Netlify"
-echo "3) Deploy to Vercel"
-echo "4) Exit"
-read -p "Enter your choice (1-4): " choice
+echo "1) Deploy to Netlify"
+echo "2) Deploy to Vercel"
+echo "3) Exit"
+read -p "Enter your choice (1-3): " choice
 
 case $choice in
     1)
-        deploy_to_github_pages
-        ;;
-    2)
         deploy_to_netlify
         ;;
-    3)
+    2)
         deploy_to_vercel
         ;;
-    4)
+    3)
         echo "Exiting..."
         exit 0
         ;;
