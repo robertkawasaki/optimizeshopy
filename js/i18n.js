@@ -1,14 +1,20 @@
 class I18n {
     constructor() {
+        // Ensure body has loading class
+        document.body.classList.add('i18n-loading');
+        
+        // Wait for languages to be available
+        if (typeof languages === 'undefined') {
+            console.error('Languages not loaded. Make sure languages.js is loaded before i18n.js');
+            return;
+        }
+
         this.currentLang = 'en';
         this.translations = languages;
         this.init();
     }
 
     init() {
-        // Add loading state to body
-        document.body.classList.add('i18n-loading');
-        
         // Force English as default language
         this.currentLang = 'en';
         localStorage.setItem('preferred_language', 'en');
@@ -16,8 +22,10 @@ class I18n {
         // Apply translations immediately
         this.updateContent();
 
-        // Remove loading state
-        document.body.classList.remove('i18n-loading');
+        // Remove loading state after a small delay to ensure smooth transition
+        setTimeout(() => {
+            document.body.classList.remove('i18n-loading');
+        }, 50);
 
         // Add language switcher event listeners
         const langSwitchers = document.querySelectorAll('.language-switcher');
@@ -37,8 +45,10 @@ class I18n {
             localStorage.setItem('preferred_language', lang);
             this.updateContent();
             
-            // Remove loading state
-            document.body.classList.remove('i18n-loading');
+            // Remove loading state after a small delay
+            setTimeout(() => {
+                document.body.classList.remove('i18n-loading');
+            }, 50);
             
             // Update language switcher if it exists
             const langSwitcher = document.querySelector('.language-switcher');

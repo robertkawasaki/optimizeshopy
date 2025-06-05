@@ -72,6 +72,8 @@ body {
     background-color: var(--background-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
 }
 
 main{
@@ -1281,10 +1283,16 @@ section:nth-child(even) {
 
 /* i18n Loading State */
 .i18n-loading [data-i18n] {
-    visibility: hidden;
+    visibility: hidden !important;
+    opacity: 0;
 }
 
-/* Ensure smooth transition when translations are applied */
 [data-i18n] {
-    transition: visibility 0.1s ease-in-out;
+    transition: visibility 0.1s ease-in-out, opacity 0.1s ease-in-out;
+    opacity: 1;
+}
+
+/* Ensure content is hidden during initial load */
+body.i18n-loading {
+    opacity: 0;
 }
