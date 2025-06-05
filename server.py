@@ -25,15 +25,26 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 
         # Set correct MIME type for JavaScript files
         if path.endswith('.js'):
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/javascript; charset=utf-8')
-            self.end_headers()
             try:
-                with open(self.translate_path(path), 'rb') as file:
+                file_path = self.translate_path(path)
+                if not os.path.exists(file_path):
+                    self.send_error(404, "File not found")
+                    return
+                
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/javascript; charset=utf-8')
+                self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+                self.send_header('Pragma', 'no-cache')
+                self.send_header('Expires', '0')
+                self.end_headers()
+                
+                with open(file_path, 'rb') as file:
                     self.wfile.write(file.read())
-            except FileNotFoundError:
-                self.send_error(404, "File not found")
-            return
+                return
+            except Exception as e:
+                print(f"Error serving {path}: {str(e)}")
+                self.send_error(500, f"Internal server error: {str(e)}")
+                return
 
         # Handle all other requests normally
         super().do_GET()

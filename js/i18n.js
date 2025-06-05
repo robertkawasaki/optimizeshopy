@@ -6,12 +6,18 @@ class I18n {
     }
 
     init() {
+        // Add loading state to body
+        document.body.classList.add('i18n-loading');
+        
         // Force English as default language
         this.currentLang = 'en';
         localStorage.setItem('preferred_language', 'en');
 
-        // Apply translations
+        // Apply translations immediately
         this.updateContent();
+
+        // Remove loading state
+        document.body.classList.remove('i18n-loading');
 
         // Add language switcher event listeners
         const langSwitchers = document.querySelectorAll('.language-switcher');
@@ -24,9 +30,15 @@ class I18n {
 
     setLanguage(lang) {
         if (this.translations[lang]) {
+            // Add loading state
+            document.body.classList.add('i18n-loading');
+            
             this.currentLang = lang;
             localStorage.setItem('preferred_language', lang);
             this.updateContent();
+            
+            // Remove loading state
+            document.body.classList.remove('i18n-loading');
             
             // Update language switcher if it exists
             const langSwitcher = document.querySelector('.language-switcher');
@@ -72,7 +84,12 @@ class I18n {
     }
 }
 
-// Initialize i18n when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize i18n as early as possible
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        window.i18n = new I18n();
+    });
+} else {
+    // If DOM is already loaded, initialize immediately
     window.i18n = new I18n();
-}); 
+} 

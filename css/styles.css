@@ -1278,3 +1278,13 @@ section:nth-child(even) {
     margin: 0 0.5rem;
   }
 }
+
+/* i18n Loading State */
+.i18n-loading [data-i18n] {
+    visibility: hidden;
+}
+
+/* Ensure smooth transition when translations are applied */
+[data-i18n] {
+    transition: visibility 0.1s ease-in-out;
+}
