@@ -4,7 +4,7 @@ const config = {
     // Payment Links
     paymentLinks: {
         report: 'https://buy.stripe.com/9AQ7wl9mtd7Z87eeUU',
-        implementation: 'https://buy.stripe.com/your_implementation_link'
+        implementation: 'https://buy.stripe.com/eVq6oGbbhbem5fAcnT1Fe01'
     },
     
     // Google Analytics
