@@ -70,7 +70,7 @@ const languages = {
         pricing_card2_feature1: "Everything in the Report",
         pricing_card2_feature2: "We implement all critical fixes",
         pricing_card2_feature3: "Google Merchant Center setup",
-        pricing_card2_feature4: "Google Ads optimization",
+        pricing_card2_feature4: "Google Ads review and plan",
         pricing_card2_feature5: "Post-implementation walkthrough",
         pricing_card2_feature6: "7-day support",
         pricing_card2_cta: "Get Report + Implementation",

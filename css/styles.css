@@ -1084,7 +1084,9 @@ section:nth-child(even) {
     color: #FFD700;
     margin-bottom: var(--spacing-md);
 }
-
+.guarantee-text{
+    font-size: 1.5rem;
+}
 .final-cta{
     text-align: center;
     margin-top: var(--spacing-3xl);
