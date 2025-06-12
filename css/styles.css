@@ -454,6 +454,21 @@ section:nth-child(even) {
 
 .chart-placeholder {
     background: var(--background-light);
+    background-image: url('../img/shopify-optimization-min.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+}
+
+.chart-placeholder-b {
+    background: var(--background-light);
+    background-image: url('../img/shopify-competitor-analysis-min.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 150px;
     border-radius: var(--border-radius);
     margin-bottom: var(--spacing-md);

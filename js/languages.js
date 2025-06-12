@@ -46,9 +46,11 @@ const languages = {
         solution_report_section1: "Performance Analysis",
         solution_report_section2: "Competitor Benchmarking",
         solution_report_section3: "Actionable Recommendations",
-        solution_report_item1: "Optimize product images",
+        solution_report_item4: "Optimize product images",
         solution_report_item2: "Improve checkout flow",
-        solution_report_item3: "Add trust badges",
+        solution_report_item5: "Add trust badges",
+        solution_report_item3: "Areas to cleanup",
+        solution_report_item1: "AI Apps Suggested",
         
         // Pricing Section
         pricing_title: "Choose Your Plan",
