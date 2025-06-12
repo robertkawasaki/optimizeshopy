@@ -39,6 +39,7 @@ const languages = {
         solution_intro: "We don't just tell you what's wrong—we show you how to fix it.",
         solution_text1: "In just 24 hours, you'll get:",
         solution_text2: "Report Option: A detailed analysis with actionable steps you can implement yourself.",
+        solution_text11: "In 7 business days, you'll get:",
         solution_text3: "Implementation Option: We'll make the critical fixes for you, so you can focus on running your business.",
         solution_text4: "Both include competitor benchmarking so you know exactly how to stand out in your market.",
         solution_report_title: "Store Optimization Report",
