@@ -375,6 +375,64 @@ section:nth-child(even) {
     font-size: var(--font-size-sm);
 }
 
+/* ===== Solutionb Section ===== */
+.solutionb {
+    padding: var(--spacing-3xl) 0;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.solutionb h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.solutionb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.solutionb-card {
+    background: var(--primary-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border-color: var(--primary-color);
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.solutionb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.solutionb-card .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.solutionb-card h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.solutionb-card p {
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+}
+
+.solution-text-2{
+    text-align: center;
+}
+
 /* ===== Solution Section ===== */
 .solution {
     padding: var(--spacing-3xl) 0;
@@ -400,6 +458,11 @@ section:nth-child(even) {
 
 .solution-text {
     padding-right: var(--spacing-xl);
+    text-align: center;
+}
+
+.solution-text p{
+    text-align: center;
 }
 
 .solution-text ul {
@@ -425,6 +488,8 @@ section:nth-child(even) {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     overflow: hidden;
+    margin: var(--spacing-xl) auto;
+    max-width: 800px;
 }
 
 .report-header {
@@ -441,6 +506,7 @@ section:nth-child(even) {
 
 .report-content {
     padding: var(--spacing-lg);
+    text-align: center;
 }
 
 .report-section {
@@ -449,7 +515,11 @@ section:nth-child(even) {
 
 .report-section h4 {
     color: var(--text-color);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+}
+.report-section p {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xs);
 }
 
 .chart-placeholder {
@@ -482,6 +552,9 @@ section:nth-child(even) {
 .pricing h2 {
     text-align: center;
     margin-bottom: var(--spacing-lg);
+}
+.pricing-subtitle{
+    text-align: center;
 }
 
 .pricing-grid {
@@ -923,6 +996,7 @@ section:nth-child(even) {
 
     .solution-text {
         padding-right: 0;
+        text-align: center;
     }
 
     .solution-image {
@@ -1091,7 +1165,7 @@ section:nth-child(even) {
 
 .guarantee{
     text-align: center;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color) !important;
     color: #fff
 }
 .guarantee-icon{
@@ -1111,6 +1185,11 @@ section:nth-child(even) {
     margin-top: 1rem;
     margin-bottom: 0.5rem;;
 }
+
+.final-cta-buttons button{
+    margin-bottom: 0.5rem;;
+}
+
 .contact{
     text-align: center;
     margin: 0 auto;
